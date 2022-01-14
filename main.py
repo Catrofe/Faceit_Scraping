@@ -5,7 +5,7 @@ from update import InserirNoBanco, LerBanco
 # Recebendo inputs
 nickname = input("Qual seu nickname na faceit CS:GO?\n")
 
-# Obtendo o HTML e o total de páginas
+# Obtendo o HTML
 response = urlopen(f"https://faceitstats.com/player/{nickname}")
 html = response.read().decode("utf-8")
 soup = BeautifulSoup(html, "html.parser")
@@ -29,6 +29,3 @@ lost = int(Matches[2].strip())
 
 
 InserirNoBanco(name, elo, matches, won, lost, win_rate, kd, hs_rate, win_streak)
-
-
-# NOME, ELO, MATCHES, WON, LOST, WINRATE, KD, HS_RATE, WINSTREAK
