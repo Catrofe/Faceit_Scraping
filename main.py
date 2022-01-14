@@ -5,14 +5,13 @@ from update import InserirNoBanco, LerBanco
 # Recebendo inputs
 nickname = input("Qual seu nickname na faceit CS:GO?\n")
 
-## Obtendo o HTML e o total de páginas
+# Obtendo o HTML e o total de páginas
 response = urlopen(f"https://faceitstats.com/player/{nickname}")
 html = response.read().decode("utf-8")
 soup = BeautifulSoup(html, "html.parser")
 name = soup.find("h1").getText().strip()
 dados = soup.findAll("div", {"class": "col-6 col-sm-6 col-md-4 col-lg-2"})
 
-soup.findAll("div", {"class": "col-6 col-sm-6 col-md-4 col-lg-2"})
 lista = []
 for item in dados:
     lista.append(item.find("h5").getText())
