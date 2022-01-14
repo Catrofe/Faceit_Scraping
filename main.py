@@ -3,9 +3,7 @@ from bs4 import BeautifulSoup
 from update import InserirNoBanco, LerBanco
 
 # Recebendo inputs
-
-print("Qual seu nick na faceit CS:GO")
-nickname = input(str())
+nickname = input("Qual seu nickname na faceit CS:GO?\n")
 
 ## Obtendo o HTML e o total de páginas
 response = urlopen("https://faceitstats.com/player/" + nickname)
