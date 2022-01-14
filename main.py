@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-from update import InserirNoBanco, LerBanco
+from update import InserirNoBanco
 
 # Recebendo inputs
 nickname = input("Qual seu nickname na faceit CS:GO?\n")
