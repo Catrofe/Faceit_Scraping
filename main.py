@@ -17,15 +17,13 @@ for item in dados:
     lista.append(item.find("h5").getText())
 
 elo = int(lista[0])
-Matches = lista[1]
+all_matches = lista[1].split("/")
+matches = int(all_matches[0].strip())
+won = int(all_matches[1].strip())
+lost = int(all_matches[2].strip())
 win_rate = int(lista[2].replace("%", ""))
 kd = float(lista[3])
 hs_rate = int(lista[4].replace("%", ""))
 win_streak = int(lista[5])
-Matches = Matches.split("/")
-matches = int(Matches[0].strip())
-won = int(Matches[1].strip())
-lost = int(Matches[2].strip())
-
 
 InserirNoBanco(name, elo, matches, won, lost, win_rate, kd, hs_rate, win_streak)
