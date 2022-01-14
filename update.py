@@ -29,7 +29,6 @@ def InserirNoBanco(nome, elo, matches, won, lost, winrate, kd, hs_rate, winstrea
     'primeirousuario@teste.com.br',
     datetime.datetime.today()
   )
-  print(sql)
   cursor.execute(sql)
   connection.commit()
 
@@ -61,3 +60,4 @@ def LerBanco():
   print("ID, NOME, ELO, MATCHES, WON, LOST, WINRATE, KD, HS_RATE, WINSTREAK")
   for result in results:
     print(result)
+
