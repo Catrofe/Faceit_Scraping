@@ -6,7 +6,7 @@ from update import InserirNoBanco, LerBanco
 nickname = input("Qual seu nickname na faceit CS:GO?\n")
 
 ## Obtendo o HTML e o total de páginas
-response = urlopen("https://faceitstats.com/player/" + nickname)
+response = urlopen(f"https://faceitstats.com/player/{nickname}")
 html = response.read().decode("utf-8")
 soup = BeautifulSoup(html, "html.parser")
 name = soup.find("h1").getText().strip()
