@@ -1,14 +1,14 @@
 import mysql.connector
 
 
-def AbreDB():
+def conecta():
     connection = mysql.connector.connect(
         host="localhost", user="root", password="2020abcd", database="faceit"
     )
     return connection
 
 
-def InserirNoBanco(nome, elo, matches, won, lost, winrate, kd, hs_rate, winstreak):
+def insere_stats(nome, elo, matches, won, lost, winrate, kd, hs_rate, winstreak):
     connection = mysql.connector.connect(
         host="localhost", user="root", password="2020abcd", database="faceit"
     )
@@ -28,7 +28,7 @@ def InserirNoBanco(nome, elo, matches, won, lost, winrate, kd, hs_rate, winstrea
     print("Foi cadastrado o novo usuário de ID:", userid)
 
 
-def LerBanco():
+def le_stats():
     connection = mysql.connector.connect(
         host="localhost", user="root", password="2020abcd", database="faceit"
     )

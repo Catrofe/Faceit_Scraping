@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-from update import InserirNoBanco
+from update import insere_stats
 
 # Recebendo inputs
 nickname = input("Qual seu nickname na faceit CS:GO?\n")
@@ -26,4 +26,4 @@ kd = float(stats[3])
 hs_rate = int(stats[4].replace("%", ""))
 win_streak = int(stats[5])
 
-InserirNoBanco(name, elo, matches, won, lost, win_rate, kd, hs_rate, win_streak)
+insere_stats(name, elo, matches, won, lost, win_rate, kd, hs_rate, win_streak)
