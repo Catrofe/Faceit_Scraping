@@ -9,9 +9,7 @@ def conecta():
 
 
 def insere_stats(nome, elo, matches, won, lost, winrate, kd, hs_rate, winstreak):
-    connection = mysql.connector.connect(
-        host="localhost", user="root", password="2020abcd", database="faceit"
-    )
+    connection = conecta()
     cursor = connection.cursor()
 
     sql = f"""INSERT INTO tbfaceituser (NOME, ELO, MATCHES, WON, LOST, WINRATE, KD, HS_RATE, WINSTREAK) 
@@ -29,10 +27,7 @@ def insere_stats(nome, elo, matches, won, lost, winrate, kd, hs_rate, winstreak)
 
 
 def le_stats():
-    connection = mysql.connector.connect(
-        host="localhost", user="root", password="2020abcd", database="faceit"
-    )
-
+    connection = conecta()
     cursor = connection.cursor()
 
     sql = "SELECT * FROM tbfaceituser"
