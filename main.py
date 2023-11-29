@@ -12,10 +12,7 @@ soup = BeautifulSoup(html, "html.parser")
 name = soup.find("h1").getText().strip()
 stats_divs = soup.findAll("div", {"class": "col-6 col-sm-6 col-md-4 col-lg-2"})
 
-stats = []
-for div in stats_divs:
-    stats.append(div.find("h5").getText())
-
+stats = [div.find("h5").getText() for div in stats_divs]
 elo = int(stats[0])
 all_matches = stats[1].split("/")
 matches = int(all_matches[0].strip())

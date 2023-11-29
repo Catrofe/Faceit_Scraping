@@ -2,10 +2,9 @@ import mysql.connector
 
 
 def conecta():
-    connection = mysql.connector.connect(
+    return mysql.connector.connect(
         host="localhost", user="root", password="2020abcd", database="faceit"
     )
-    return connection
 
 
 def insere_stats(nome, elo, matches, won, lost, winrate, kd, hs_rate, winstreak):
